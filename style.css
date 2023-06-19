@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #f5f7f8;
+}
+
+.grid-container {
+    width: 100%;
+    background-color: #f5f7f8;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows: 120px 60px 40vh 20vh 80px;
+    grid-gap: 10px;
+    grid-template-areas:
+        "h h l"
+        "ms ms ms"
+        "ml m m "
+        "ml d s"
+        "f f f";
+}
+
+header {
+    grid-area: h;
+    background-color: red;
+}
+
+#login {
+    grid-area: l;
+    background-color: lightgreen;
+}
+
+#menu-superior {
+    grid-area: ms;
+    background-color: green;
+}
+
+#menu-lateral {
+    grid-area: ml;
+    background-color: blue;
+}
+
+main {
+    grid-area: m;
+    background-color: aqua;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "h1 h1"
+        "ma ma"
+        "se te";
+}
+
+main>h1 {
+    grid-area: h1;
+    margin: 10px;
+    margin-bottom: 0;
+}
+
+main>#manchete {
+    grid-area: ma;
+    background-color: aquamarine;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+main>#secundaria {
+    grid-area: se;
+    background-color: aquamarine;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+main>#terceira {
+    grid-area: te;
+    background-color: aquamarine;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#destaques {
+    grid-area: d;
+    background-color: darkviolet;
+}
+
+#serviços {
+    grid-area: s;
+    background-color: orangered;
+}
+
+footer {
+    grid-area: f;
+    background-color: brown;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .grid-container {
+        width: 100%;
+        background-color: #f5f7f8;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: 3fr 4fr 3fr;
+        grid-template-rows: 120px 60px 40vh 20vh 20vh 80px;
+        grid-gap: 10px;
+        grid-template-areas:
+            "h h l"
+            "ms ms ms"
+            "ml m m"
+            "ml d d"
+            "ml s s"
+            "f f f";
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        width: 100%;
+        background-color: #f5f7f8;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 120px 60px 40vh 20vh 80px;
+        grid-gap: 10px;
+        grid-template-areas:
+            "h"
+            "ms"
+            "m"
+            "d"
+            "f";
+    }
+
+    #login {
+        display: none;
+    }
+
+    #menu-lateral {
+        display: none;
+    }
+
+    #serviços {
+        display: none;
+    }
+
+    main {
+        grid-area: m;
+        background-color: aqua;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "h1"
+            "ma"
+            "se"
+            "te";
+    }
+
+    main>h1 {
+        grid-area: h1;
+        margin: 10px;
+        margin-top: 0;
+    }
+
+    main>#manchete {
+        grid-area: ma;
+        background-color: aquamarine;
+        margin: 10px;
+        margin-top: 0;
+    }
+
+    main>#secundaria {
+        grid-area: se;
+        background-color: aquamarine;
+        margin: 10px;
+        margin-top: 0;
+    }
+
+    main>#terceira {
+        grid-area: te;
+        background-color: aquamarine;
+        margin: 10px;
+        margin-top: 0;
+    }
+}
